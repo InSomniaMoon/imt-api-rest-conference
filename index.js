@@ -9,12 +9,16 @@ const routesLogin = require('./routes/login')
 let corsOption = {
   origin : '*'
 }
+
+app.use(cors(corsOption))
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/articles', routesArticle)
 app.use('/login', routesLogin)
-app.use(cors(corsOption))
+
 
 
 
