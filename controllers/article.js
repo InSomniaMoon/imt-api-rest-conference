@@ -14,7 +14,7 @@ exports.getArticles = (req,res) => {
 
 exports.getArticle = (req,res) => {
     let {id} = req.params
-    let article = ArticleModel.articles.filter(a => a.id == id)
+    let article = ArticleModel.articles.find(a => a.id == id)
     if(article.length > 0){
         res.status(200).json(article)
     }else{
@@ -24,7 +24,7 @@ exports.getArticle = (req,res) => {
 
 exports.deleteArticle = (req,res) => {
     let {id} = req.params
-    let article = ArticleModel.articles.filter(a => a.id == id)[0]
+    let article = ArticleModel.articles.find(a => a.id == id)
     if(article){
         let index = ArticleModel.articles.indexOf(article)
         ArticleModel.articles.splice(index,1)
