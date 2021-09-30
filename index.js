@@ -6,13 +6,15 @@ const bodyParser = require("body-parser");
 const routesArticle = require('./routes/article')
 const routesLogin = require('./routes/login')
 
-
+let corsOption = {
+  origin : '*'
+}
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/articles', routesArticle)
 app.use('/login', routesLogin)
-app.use(cors())
+app.use(cors(corsOption))
 
 
 
