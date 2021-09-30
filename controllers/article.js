@@ -15,7 +15,7 @@ exports.getArticles = (req,res) => {
 exports.getArticle = (req,res) => {
     let {id} = req.params
     let article = ArticleModel.articles.find(a => a.id == id)
-    if(article.length > 0){
+    if(article){
         res.status(200).json(article)
     }else{
         res.status(400).json({err : "Pas d'article avec cet Id"})
