@@ -1,5 +1,5 @@
 const express = require('express')
-
+const cors = require('cors')
 const app = express()
 const port = 3000
 const bodyParser = require("body-parser");
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use('/articles', routesArticle)
 app.use('/login', routesLogin)
-
+app.use(cors())
 
 
 
