@@ -5,7 +5,7 @@ exports.checkToken = (req,res,next) => {
     let { token } = req.body
     if(token == TOKEN)
     {
-        res.status(200)
+        res.status(200).end()
     }else{
         res.status(403).json({message : "Invalid token."})
     }
